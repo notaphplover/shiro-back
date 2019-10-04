@@ -1,0 +1,39 @@
+plugins {
+    id 'jacoco'
+    id 'java'
+}
+
+group 'org.jucm.test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    implementation('io.reactivex.rxjava3:rxjava:3.0.0-RC2')
+
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+}
+
+jacoco {
+    toolVersion = "0.8.4"
+    reportsDir = file("$buildDir/reports/jacoco")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/reports/jacoco/jacocoHtml")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

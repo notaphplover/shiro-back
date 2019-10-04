@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend_app:
+    build: .
+    networks:
+      - ant
+    volumes:
+      - .:/app
+
+networks:
+  ant:
+    driver: bridge
