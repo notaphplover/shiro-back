@@ -22,6 +22,6 @@ public class FacturaeParserTest extends AbstractFacturaeParserTest<Facturae> {
         String[] files = {
                 "xml/schema/facturae/v3_2_1/facturae_3_2_1_1.xml",
         };
-        this.checkFilesArePared(FacturaeParserTest._parser, files, Facturae.class);
+        this.checkFilesAreParsed(FacturaeParserTest._parser, files, Facturae.class);
     }
 }

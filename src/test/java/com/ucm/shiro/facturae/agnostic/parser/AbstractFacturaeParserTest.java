@@ -6,10 +6,10 @@ import java.io.InputStream;
 
 public abstract class AbstractFacturaeParserTest<T> {
 
-    protected void checkFilesArePared(
-            FacturaeXmlParser<T> parser,
-            String[] resourcePaths,
-            Class<T> tClass
+    protected void checkFilesAreParsed(
+        FacturaeXmlParser<T> parser,
+        String[] resourcePaths,
+        Class<T> tClass
     ) throws FacturaeParseException {
         Object[] output = new Object[resourcePaths.length];
 
