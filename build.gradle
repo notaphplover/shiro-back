@@ -9,8 +9,11 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 dependencies {
+    implementation('com.sun.istack:istack-commons-runtime:2.24')
+    implementation('com.sun.xml.bind:jaxb-impl:2.3.2')
     implementation('io.reactivex.rxjava3:rxjava:3.0.0-RC2')
-
+    implementation('javax.xml.bind:jaxb-api:2.3.1')
+    implementation('net.sf.saxon:Saxon-HE:9.9.1-5')
     testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
 }
 
