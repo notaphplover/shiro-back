@@ -24,7 +24,7 @@ public class FacturaeParserTest {
         InputStream input1 = this
                 .getClass()
                 .getClassLoader()
-                .getResourceAsStream("xml.schema.facturae.v3_0/facturae_3_0_1.xml");
+                .getResourceAsStream("xml/schema/facturae/v3_0/facturae_3_0_1.xml");
 
         Facturae output1 = FacturaeParserTest._parser.parse(input1);
         Assertions.assertNotNull(output1);
@@ -32,7 +32,7 @@ public class FacturaeParserTest {
         InputStream input2 = this
                 .getClass()
                 .getClassLoader()
-                .getResourceAsStream("xml.schema.facturae.v3_0/facturae_3_0_2.xml");
+                .getResourceAsStream("xml/schema/facturae/v3_0/facturae_3_0_2.xml");
 
         Facturae output2 = FacturaeParserTest._parser.parse(input2);
         Assertions.assertNotNull(output2);
