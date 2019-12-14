@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fe:Facturae xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:fe="http://www.facturae.es/Facturae/2009/v3.2/Facturae">
+  <FileHeader>
+    <SchemaVersion>3.2</SchemaVersion>
+    <Modality>I</Modality>
+    <InvoiceIssuerType>EM</InvoiceIssuerType>
+    <Batch>
+      <BatchIdentifier>U0155887323068718005</BatchIdentifier>
+      <InvoicesCount>1</InvoicesCount>
+      <TotalInvoicesAmount>
+        <TotalAmount>389554.73</TotalAmount>
+      </TotalInvoicesAmount>
+      <TotalOutstandingAmount>
+        <TotalAmount>389554.73</TotalAmount>
+      </TotalOutstandingAmount>
+      <TotalExecutableAmount>
+        <TotalAmount>389554.73</TotalAmount>
+      </TotalExecutableAmount>
+      <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+    </Batch>
+  </FileHeader>
+  <Parties>
+    <SellerParty>
+      <TaxIdentification>
+        <PersonTypeCode>J</PersonTypeCode>
+        <ResidenceTypeCode>R</ResidenceTypeCode>
+        <TaxIdentificationNumber>U01558873</TaxIdentificationNumber>
+      </TaxIdentification>
+      <LegalEntity>
+        <CorporateName>UTE TXAGORRITXU</CorporateName>
+        <TradeName>UTE TXAGORRITXU</TradeName>
+        <AddressInSpain>
+          <Address>CL San Antonio 15</Address>
+          <PostCode>01005</PostCode>
+          <Town>Vitoria-Gasteiz</Town>
+          <Province>Álava</Province>
+          <CountryCode>ESP</CountryCode>
+        </AddressInSpain>
+      </LegalEntity>
+    </SellerParty>
+    <BuyerParty>
+      <TaxIdentification>
+        <PersonTypeCode>J</PersonTypeCode>
+        <ResidenceTypeCode>R</ResidenceTypeCode>
+        <TaxIdentificationNumber>S5100023J</TaxIdentificationNumber>
+      </TaxIdentification>
+      <AdministrativeCentres>
+                  <AdministrativeCentre>
+            <CentreCode>A16005975</CentreCode>
+            <RoleTypeCode>01</RoleTypeCode>
+            <AddressInSpain>
+              <Address>CALLE ALAVA, 45 </Address>
+              <PostCode>01006</PostCode>
+              <Town>Vitoria-Gasteiz</Town>
+              <Province>Álava</Province>
+              <CountryCode>ESP</CountryCode>
+            </AddressInSpain>
+            <CentreDescription>OSAKIDETZA</CentreDescription>
+          </AdministrativeCentre>
+          <AdministrativeCentre>
+            <CentreCode>A16007489</CentreCode>
+            <RoleTypeCode>02</RoleTypeCode>
+            <AddressInSpain>
+              <Address>CALLE ALAVA, 45</Address>
+              <PostCode>01006</PostCode>
+              <Town>Vitoria-Gasteiz</Town>
+              <Province>Álava</Province>
+              <CountryCode>ESP</CountryCode>
+            </AddressInSpain>
+            <CentreDescription>DIRECCION GENERAL</CentreDescription>
+          </AdministrativeCentre>
+          <AdministrativeCentre>
+            <CentreCode>A16007489</CentreCode>
+            <RoleTypeCode>03</RoleTypeCode>
+            <AddressInSpain>
+              <Address>CALLE ALAVA, 45</Address>
+              <PostCode>01006</PostCode>
+              <Town>Vitoria-Gasteiz</Town>
+              <Province>Álava</Province>
+              <CountryCode>ESP</CountryCode>
+            </AddressInSpain>
+            <CentreDescription>DIRECCION GENERAL</CentreDescription>
+          </AdministrativeCentre>
+              </AdministrativeCentres>
+      <LegalEntity>
+        <CorporateName>OSAKIDETZA</CorporateName>
+        <TradeName>OSAKIDETZA</TradeName>
+        <AddressInSpain>
+          <Address>CL ALAVA 45</Address>
+          <PostCode>01006</PostCode>
+          <Town>Vitoria-Gasteiz</Town>
+          <Province>Álava</Province>
+          <CountryCode>ESP</CountryCode>
+        </AddressInSpain>
+      </LegalEntity>
+    </BuyerParty>
+  </Parties>
+  <Invoices>
+          <Invoice>
+        <InvoiceHeader>
+          <InvoiceNumber>23068718005</InvoiceNumber>
+          <InvoiceDocumentType>FC</InvoiceDocumentType>
+          <InvoiceClass>OO</InvoiceClass>
+        </InvoiceHeader>
+        <InvoiceIssueData>
+          <IssueDate>2018-05-15</IssueDate>
+          <OperationDate>2018-05-15</OperationDate>
+          <InvoicingPeriod>
+            <StartDate>2018-05-15</StartDate>
+            <EndDate>2018-05-15</EndDate>
+          </InvoicingPeriod>
+          <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+          <TaxCurrencyCode>EUR</TaxCurrencyCode>
+          <LanguageName>es</LanguageName>
+        </InvoiceIssueData>
+        <TaxesOutputs>
+                      <Tax>
+              <TaxTypeCode>01</TaxTypeCode>
+              <TaxRate>21.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>321946.06</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>67608.67</TotalAmount>
+              </TaxAmount>
+            </Tax>
+                  </TaxesOutputs>
+        <InvoiceTotals>
+          <TotalGrossAmount>321946.06</TotalGrossAmount>
+          <TotalGrossAmountBeforeTaxes>321946.06</TotalGrossAmountBeforeTaxes>
+          <TotalTaxOutputs>67608.67</TotalTaxOutputs>
+          <TotalTaxesWithheld>0.00</TotalTaxesWithheld>
+          <InvoiceTotal>389554.73</InvoiceTotal>
+          <TotalOutstandingAmount>389554.73</TotalOutstandingAmount>
+          <TotalExecutableAmount>389554.73</TotalExecutableAmount>
+        </InvoiceTotals>
+        <Items>
+                      <InvoiceLine>
+              <ReceiverContractReference>09/14 4.2</ReceiverContractReference>
+              <ReceiverTransactionReference>09/14 4.2</ReceiverTransactionReference>
+              <FileReference>09/14 4.2</FileReference>
+              <ItemDescription>Importe de la certificación 10 del contrato: 1</ItemDescription>
+              <Quantity>1</Quantity>
+              <UnitPriceWithoutTax>452874.850000</UnitPriceWithoutTax>
+              <TotalCost>452874.850000</TotalCost>
+              <GrossAmount>452874.850000</GrossAmount>
+              <TaxesOutputs>
+                                  <Tax>
+                    <TaxTypeCode>01</TaxTypeCode>
+                    <TaxRate>21.00</TaxRate>
+                    <TaxableBase>
+                      <TotalAmount>452874.85</TotalAmount>
+                    </TaxableBase>
+                    <TaxAmount>
+                      <TotalAmount>95103.72</TotalAmount>
+                    </TaxAmount>
+                  </Tax>
+                              </TaxesOutputs>
+              <LineItemPeriod>
+                <StartDate>2018-05-15</StartDate>
+                <EndDate>2018-05-15</EndDate>
+              </LineItemPeriod>
+              <AdditionalLineItemInformation></AdditionalLineItemInformation>
+              <ArticleCode></ArticleCode>
+            </InvoiceLine>
+            <InvoiceLine>
+              <ReceiverContractReference>09/14 4.2</ReceiverContractReference>
+              <ReceiverTransactionReference>09/14 4.2</ReceiverTransactionReference>
+              <FileReference>09/14 4.2</FileReference>
+              <ItemDescription>Descuento de Anticipos </ItemDescription>
+              <Quantity>1</Quantity>
+              <UnitPriceWithoutTax>-130928.790000</UnitPriceWithoutTax>
+              <TotalCost>-130928.790000</TotalCost>
+              <GrossAmount>-130928.790000</GrossAmount>
+              <TaxesOutputs>
+                                  <Tax>
+                    <TaxTypeCode>01</TaxTypeCode>
+                    <TaxRate>21.00</TaxRate>
+                    <TaxableBase>
+                      <TotalAmount>-130928.79</TotalAmount>
+                    </TaxableBase>
+                    <TaxAmount>
+                      <TotalAmount>-27495.05</TotalAmount>
+                    </TaxAmount>
+                  </Tax>
+                              </TaxesOutputs>
+              <LineItemPeriod>
+                <StartDate>2018-05-15</StartDate>
+                <EndDate>2018-05-15</EndDate>
+              </LineItemPeriod>
+              <AdditionalLineItemInformation></AdditionalLineItemInformation>
+              <ArticleCode></ArticleCode>
+            </InvoiceLine>
+                  </Items>
+        <PaymentDetails>
+                      <Installment>
+              <InstallmentDueDate>2018-07-21</InstallmentDueDate>
+              <InstallmentAmount>389554.73</InstallmentAmount>
+              <PaymentMeans>04</PaymentMeans>
+              <AccountToBeCredited>
+                <IBAN>ES3200815182560001395547</IBAN>
+                <BankCode>0081</BankCode>
+                <BranchCode>5182</BranchCode>
+              </AccountToBeCredited>
+              <PaymentReconciliationReference>BSABESBB</PaymentReconciliationReference>
+            </Installment>
+                  </PaymentDetails>
+        <LegalLiterals>
+                                    <LegalReference>El devengo de esta operación se produce de acuerdo con el artº 75. Dos de la Ley 37/1992 del IVA o a la Recepción de la obra. </LegalReference>
+                                      <LegalReference>La fecha de emisión de la factura a efectos tributarios será la del devengo de la operación, que se producirá al cobro o recepción de la obra según lo dispuesto en el artº 75 de la Ley 37/1992 de IVA.</LegalReference>
+                              </LegalLiterals>
+        <AdditionalData>
+          <InvoiceAdditionalInformation>Nombre del contrato del cliente: Const nuevo edific servicios ctrles en Txagorritxu</InvoiceAdditionalInformation>
+        </AdditionalData>
+      </Invoice>
+      </Invoices>
+</fe:Facturae>
