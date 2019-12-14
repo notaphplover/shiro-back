@@ -1,7 +1,7 @@
-package com.ucm.shiro.facturae.v3_0.parser;
+package com.ucm.shiro.facturae.v3_1.parser;
 
 import com.ucm.shiro.facturae.agnostic.parser.FacturaeParseException;
-import com.ucm.shiro.facturae.v3_0.parser.types.Facturae;
+import com.ucm.shiro.facturae.v3_1.parser.types.Facturae;
 import java.io.InputStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,13 +17,13 @@ public class FacturaeParserTest {
         FacturaeParserTest._parser = new FacturaeParser();
     }
 
-    @DisplayName("It must parse a valid Facturae V3.0 files")
+    @DisplayName("It must parse a valid Facturae V3.1 files")
     @Test
-    public void itMustParseValidFacturaeV3_0Files() throws FacturaeParseException {
+    public void itMustParseValidFacturaeV3_1Files() throws FacturaeParseException {
         InputStream input1 = this
                 .getClass()
                 .getClassLoader()
-                .getResourceAsStream("xml/schema/facturae/v3_0/facturae_3_0_1.xml");
+                .getResourceAsStream("xml/schema/facturae/v3_1/facturae_3_1_1.xml");
 
         Facturae output1 = FacturaeParserTest._parser.parse(input1);
         Assertions.assertNotNull(output1);
@@ -31,7 +31,7 @@ public class FacturaeParserTest {
         InputStream input2 = this
                 .getClass()
                 .getClassLoader()
-                .getResourceAsStream("xml/schema/facturae/v3_0/facturae_3_0_2.xml");
+                .getResourceAsStream("xml/schema/facturae/v3_1/facturae_3_1_2.xml");
 
         Facturae output2 = FacturaeParserTest._parser.parse(input2);
         Assertions.assertNotNull(output2);
