@@ -14,6 +14,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Add wrapper
-      run: ./gradlew wrapper
+      run: gradle wrapper
     - name: Build with Gradle
       run: ./gradlew build
