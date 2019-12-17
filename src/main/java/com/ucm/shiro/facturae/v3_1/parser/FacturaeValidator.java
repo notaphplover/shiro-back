@@ -1,7 +1,7 @@
 package com.ucm.shiro.facturae.v3_1.parser;
 
 import com.ucm.shiro.facturae.agnostic.parser.AbstractFacturaeValidator;
-import com.ucm.shiro.facturae.agnostic.parser.FacturaeValidationException;
+import com.ucm.shiro.facturae.exception.FacturaeValidationException;
 
 public class FacturaeValidator extends AbstractFacturaeValidator {
 

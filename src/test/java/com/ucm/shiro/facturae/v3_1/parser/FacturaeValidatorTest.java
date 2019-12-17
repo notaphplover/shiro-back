@@ -1,7 +1,7 @@
 package com.ucm.shiro.facturae.v3_1.parser;
 
 import com.ucm.shiro.facturae.agnostic.parser.AbstractFacturaeValidatorTest;
-import com.ucm.shiro.facturae.agnostic.parser.FacturaeValidationException;
+import com.ucm.shiro.facturae.exception.FacturaeValidationException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

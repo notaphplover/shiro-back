@@ -1,7 +1,7 @@
 package com.ucm.shiro.facturae.agnostic.parser;
 
 import com.ucm.shiro.facturae.FacturaeVersion;
-import com.ucm.shiro.facturae.v3_2_0.parser.types.Facturae;
+import com.ucm.shiro.facturae.exception.FacturaeValidationException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 

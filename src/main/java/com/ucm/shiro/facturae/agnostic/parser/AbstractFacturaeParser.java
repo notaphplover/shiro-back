@@ -1,5 +1,7 @@
 package com.ucm.shiro.facturae.agnostic.parser;
 
+import com.ucm.shiro.facturae.exception.FacturaeParseException;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
