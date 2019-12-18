@@ -1,7 +1,6 @@
 package com.ucm.shiro.facturae.v3_2_0.transformer;
 
 import com.ucm.shiro.facturae.agnostic.transformer.AbstractFacturaeTransformerTest;
-import com.ucm.shiro.facturae.exception.FacturaeParseException;
 import com.ucm.shiro.facturae.exception.FacturaeTransformException;
 import com.ucm.shiro.facturae.exception.FacturaeValidationException;
 import com.ucm.shiro.facturae.v3_2_1.parser.FacturaeValidator;

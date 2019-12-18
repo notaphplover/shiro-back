@@ -12,7 +12,7 @@ public class AbstractFacturaeTransformerTest {
         String[] inputs,
         AbstractFacturaeTransformer transformer,
         AbstractFacturaeValidator validatorNext
-    ) throws IOException, FacturaeTransformException {
+    ) throws FacturaeTransformException {
         for (String input: inputs) {
             this.checkFileIsTransformed(input, transformer, validatorNext);
         }
@@ -22,10 +22,10 @@ public class AbstractFacturaeTransformerTest {
         String input,
         AbstractFacturaeTransformer transformer,
         AbstractFacturaeValidator validatorNext
-    ) throws IOException, FacturaeTransformException {
-        PipedInputStream inputFromTransformed = new PipedInputStream();
-        PipedOutputStream output = new PipedOutputStream(inputFromTransformed);
+    ) throws FacturaeTransformException {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
         transformer.transform(this.getClass().getClassLoader().getResourceAsStream(input), output);
+        ByteArrayInputStream inputFromTransformed = new ByteArrayInputStream(output.toByteArray());
         Assertions.assertTrue(validatorNext.check(inputFromTransformed));
     }
 }

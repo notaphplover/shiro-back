@@ -8,6 +8,8 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import net.sf.saxon.TransformerFactoryImpl;
+
 public class AbstractFacturaeTransformer {
 
     protected TransformerFactory _factory;
@@ -15,7 +17,8 @@ public class AbstractFacturaeTransformer {
     protected Transformer _xslTransformer;
 
     public AbstractFacturaeTransformer(InputStream xsltInput) throws FacturaeTransformException {
-        this._factory = TransformerFactory.newInstance();
+        this._factory = TransformerFactoryImpl.newInstance();
+
         Source xslt = new StreamSource(xsltInput);
         try {
             this._xslTransformer = this._factory.newTransformer(xslt);
