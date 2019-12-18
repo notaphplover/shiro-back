@@ -1,14 +1,13 @@
 package com.ucm.shiro.facturae.agnostic.transformer;
 
 import com.ucm.shiro.facturae.exception.FacturaeTransformException;
+import net.sf.saxon.TransformerFactoryImpl;
 
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.InputStream;
 import java.io.OutputStream;
-
-import net.sf.saxon.TransformerFactoryImpl;
 
 public class AbstractFacturaeTransformer {
 

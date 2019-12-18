@@ -4,7 +4,8 @@ import com.ucm.shiro.facturae.agnostic.parser.AbstractFacturaeValidator;
 import com.ucm.shiro.facturae.exception.FacturaeTransformException;
 import org.junit.jupiter.api.Assertions;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 
 public class AbstractFacturaeTransformerTest {
 
