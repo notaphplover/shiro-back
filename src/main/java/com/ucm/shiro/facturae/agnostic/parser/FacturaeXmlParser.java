@@ -1,5 +1,7 @@
 package com.ucm.shiro.facturae.agnostic.parser;
 
+import com.ucm.shiro.facturae.exception.FacturaeParseException;
+
 import java.io.InputStream;
 
 public interface FacturaeXmlParser<T> {

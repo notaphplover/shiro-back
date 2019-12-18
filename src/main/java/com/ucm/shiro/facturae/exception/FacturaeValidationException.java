@@ -1,4 +1,4 @@
-package com.ucm.shiro.facturae.agnostic.parser;
+package com.ucm.shiro.facturae.exception;
 
 public class FacturaeValidationException extends Exception {
 

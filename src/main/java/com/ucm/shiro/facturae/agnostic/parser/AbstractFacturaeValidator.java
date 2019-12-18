@@ -1,5 +1,6 @@
 package com.ucm.shiro.facturae.agnostic.parser;
 
+import com.ucm.shiro.facturae.exception.FacturaeValidationException;
 import org.w3c.dom.ls.LSInput;
 import org.w3c.dom.ls.LSResourceResolver;
 import org.xml.sax.SAXException;

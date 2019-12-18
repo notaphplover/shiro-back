@@ -1,5 +1,6 @@
 package com.ucm.shiro.facturae.agnostic.parser;
 
+import com.ucm.shiro.facturae.exception.FacturaeParseException;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.InputStream;
