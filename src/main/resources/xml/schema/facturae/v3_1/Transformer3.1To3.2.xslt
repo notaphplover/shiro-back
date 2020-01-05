@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fe32="http://www.facturae.es/Facturae/2009/v3.2/Facturae" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="fe32 xs">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fe31="http://www.facturae.es/Facturae/2007/v3.1/Facturae" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="fe31 xs">
 	<xsl:decimal-format name="decimal" decimal-separator="."/>
 	<xsl:template name="tmpl1_ThirdPartyType">
 		<xsl:param name="input" select="/.."/>
@@ -691,7 +691,7 @@
 			</xsl:if>
 			<xsl:if test="boolean(self::DiscountAmount)">
 				<DiscountAmount>
-					<xsl:value-of select="format-number(number(string(.)), '#0.00', 'decimal')"/>
+					<xsl:value-of select="format-number(number(string(.)), '#0.000000', 'decimal')"/>
 				</DiscountAmount>
 			</xsl:if>
 		</xsl:for-each>
@@ -723,7 +723,7 @@
 			</xsl:if>
 			<xsl:if test="boolean(self::ChargeAmount)">
 				<ChargeAmount>
-					<xsl:value-of select="format-number(number(string(.)), '#0.00', 'decimal')"/>
+					<xsl:value-of select="format-number(number(string(.)), '#0.000000', 'decimal')"/>
 				</ChargeAmount>
 			</xsl:if>
 		</xsl:for-each>
@@ -1177,18 +1177,18 @@
 		
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
-		<fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2014/v3.2.1/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2009/v3.2/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 			<xsl:attribute name="xsi:schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
-				<xsl:value-of select="'http://www.facturae.es/Facturae/2014/v3.2.1/Facturae'"/>
+				<xsl:value-of select="'http://www.facturae.es/Facturae/2009/v3.2/Facturae'"/>
 			</xsl:attribute>
-			<xsl:for-each select="fe32:Facturae">
+			<xsl:for-each select="fe31:Facturae">
 				<xsl:variable name="var1_FileHeader" select="*[local-name()='FileHeader' and namespace-uri()='']"/>
 				<xsl:variable name="var2_Parties" select="*[local-name()='Parties' and namespace-uri()='']"/>
 				<xsl:variable name="var3_SellerParty" select="$var2_Parties/*[local-name()='SellerParty' and namespace-uri()='']"/>
 				<xsl:variable name="var4_BuyerParty" select="$var2_Parties/*[local-name()='BuyerParty' and namespace-uri()='']"/>
 				<FileHeader xmlns="">
 					<SchemaVersion>
-						<xsl:value-of select="'3.2.1'"/>
+						<xsl:value-of select="'3.2'"/>
 					</SchemaVersion>
 					<Modality>
 						<xsl:value-of select="string($var1_FileHeader/Modality)"/>
@@ -1436,13 +1436,6 @@
 														<DeliveryNoteNumber>
 															<xsl:value-of select="string(DeliveryNoteNumber)"/>
 														</DeliveryNoteNumber>
-														<xsl:choose>
-															<xsl:when test='DeliveryNoteDate!=""'>
-																<DeliveryNoteDate>
-																	<xsl:value-of select="string(DeliveryNoteDate)"/>
-																</DeliveryNoteDate>
-															</xsl:when>
-														</xsl:choose>
 													</DeliveryNote>
 												</xsl:for-each>
 											</DeliveryNotesReferences>
@@ -1462,7 +1455,7 @@
 											<xsl:value-of select="string(UnitPriceWithoutTax)"/>
 										</UnitPriceWithoutTax>
 										<TotalCost>
-											<xsl:value-of select="format-number(number(string(TotalCost)), '#0.00', 'decimal')"/>
+											<xsl:value-of select="format-number(number(string(TotalCost)), '#0.000000', 'decimal')"/>
 										</TotalCost>
 										<xsl:for-each select="DiscountsAndRebates">
 											<DiscountsAndRebates>
@@ -1479,7 +1472,7 @@
 											</Charges>
 										</xsl:for-each>
 										<GrossAmount>
-											<xsl:value-of select="format-number(number(string(GrossAmount)), '#0.00', 'decimal')"/>
+											<xsl:value-of select="format-number(number(string(GrossAmount)), '#0.000000', 'decimal')"/>
 										</GrossAmount>
 										<xsl:for-each select="TaxesWithheld">
 											<TaxesWithheld>
