@@ -3,5 +3,3 @@
 /build
 /gradle/*
 !/gradle/wrapper
-/gradle/wrapper/*
-!/gradle/wrapper/gradle-wrapper.properties
