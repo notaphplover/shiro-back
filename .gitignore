@@ -1,4 +1,7 @@
 /.gradle
 /.idea
 /build
-/gradle
+/gradle/*
+!/gradle/wrapper
+/gradle/wrapper/*
+!/gradle/wrapper/gradle-wrapper.properties
