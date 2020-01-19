@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fe32="http://www.facturae.es/Facturae/2009/v3.2/Facturae" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="fe32 xs">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fe30="http://www.facturae.es/Facturae/2007/v3.0/Facturae" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="fe30 xs">
 	<xsl:decimal-format name="decimal" decimal-separator="."/>
 	<xsl:template name="tmpl1_ThirdPartyType">
 		<xsl:param name="input" select="/.."/>
@@ -691,7 +691,7 @@
 			</xsl:if>
 			<xsl:if test="boolean(self::DiscountAmount)">
 				<DiscountAmount>
-					<xsl:value-of select="format-number(number(string(.)), '#0.00', 'decimal')"/>
+					<xsl:value-of select="string(.)"/>
 				</DiscountAmount>
 			</xsl:if>
 		</xsl:for-each>
@@ -723,7 +723,7 @@
 			</xsl:if>
 			<xsl:if test="boolean(self::ChargeAmount)">
 				<ChargeAmount>
-					<xsl:value-of select="format-number(number(string(.)), '#0.00', 'decimal')"/>
+					<xsl:value-of select="string(.)"/>
 				</ChargeAmount>
 			</xsl:if>
 		</xsl:for-each>
@@ -1039,11 +1039,6 @@
 						</xsl:call-template>
 					</OverseasBranchAddress>
 				</xsl:if>
-				<xsl:if test="boolean(self::BIC)">
-					<BIC>
-						<xsl:value-of select="string(.)"/>
-					</BIC>
-				</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="tmplInstallment">
@@ -1089,16 +1084,6 @@
 					<CollectionAdditionalInformation>
 						<xsl:value-of select="string(CollectionAdditionalInformation)"/>
 					</CollectionAdditionalInformation>
-				</xsl:if>
-				<xsl:if test="boolean(self::Installment/RegulatoryReportingData)">
-					<RegulatoryReportingData>
-						<xsl:value-of select="string(RegulatoryReportingData)"/>
-					</RegulatoryReportingData>
-				</xsl:if>
-				<xsl:if test="boolean(self::Installment/DebitReconciliationReference)">
-					<DebitReconciliationReference>
-						<xsl:value-of select="string(DebitReconciliationReference)"/>
-					</DebitReconciliationReference>
 				</xsl:if>
 				</Installment>
 			</xsl:if>
@@ -1165,11 +1150,6 @@
 						<xsl:value-of select="string(LogicalOperationalPoint)" />
 					</LogicalOperationalPoint>
 				</xsl:if>
-				<xsl:if test="boolean(self::AdministrativeCentre/CentreDescription)">
-					<CentreDescription>
-						<xsl:value-of select="string(CentreDescription)" />
-					</CentreDescription>
-				</xsl:if>
 				</AdministrativeCentre>
 				</xsl:if>
 		</xsl:for-each>	
@@ -1177,18 +1157,18 @@
 		
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
-		<fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2014/v3.2.1/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2007/v3.1/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 			<xsl:attribute name="xsi:schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
-				<xsl:value-of select="'http://www.facturae.es/Facturae/2014/v3.2.1/Facturae'"/>
+				<xsl:value-of select="'http://www.facturae.es/Facturae/2007/v3.1/Facturae'"/>
 			</xsl:attribute>
-			<xsl:for-each select="fe32:Facturae">
+			<xsl:for-each select="fe30:Facturae">
 				<xsl:variable name="var1_FileHeader" select="*[local-name()='FileHeader' and namespace-uri()='']"/>
 				<xsl:variable name="var2_Parties" select="*[local-name()='Parties' and namespace-uri()='']"/>
 				<xsl:variable name="var3_SellerParty" select="$var2_Parties/*[local-name()='SellerParty' and namespace-uri()='']"/>
 				<xsl:variable name="var4_BuyerParty" select="$var2_Parties/*[local-name()='BuyerParty' and namespace-uri()='']"/>
 				<FileHeader xmlns="">
 					<SchemaVersion>
-						<xsl:value-of select="'3.2.1'"/>
+						<xsl:value-of select="'3.1'"/>
 					</SchemaVersion>
 					<Modality>
 						<xsl:value-of select="string($var1_FileHeader/Modality)"/>
@@ -1343,9 +1323,6 @@
 										<CorrectionMethodDescription>
 											<xsl:value-of select="string(CorrectionMethodDescription)"/>
 										</CorrectionMethodDescription>
-										<AdditionalReasonDescription>
-											<xsl:value-of select="string(AdditionalReasonDescription)"/>
-										</AdditionalReasonDescription>
 									</Corrective>
 								</xsl:for-each>
 							</InvoiceHeader>
@@ -1379,51 +1356,21 @@
 												<xsl:value-of select="string(.)"/>
 											</IssuerContractReference>
 										</xsl:for-each>
-										<xsl:if test="boolean(self::IssuerContractDate)">
-											<IssuerContractDate>
-												<xsl:value-of select="string(IssuerContractDate)"/>
-											</IssuerContractDate>
-										</xsl:if>
 										<xsl:for-each select="IssuerTransactionReference">
 											<IssuerTransactionReference>
 												<xsl:value-of select="string(.)"/>
 											</IssuerTransactionReference>
 										</xsl:for-each>
-										<xsl:if test="boolean(self::IssuerTransactionDate)">
-											<IssuerTransactionDate>
-												<xsl:value-of select="string(IssuerTransactionDate)"/>
-											</IssuerTransactionDate>
-										</xsl:if>
 										<xsl:for-each select="ReceiverContractReference">
 											<ReceiverContractReference>
 												<xsl:value-of select="string(.)"/>
 											</ReceiverContractReference>
 										</xsl:for-each>
-										<xsl:if test="boolean(self::ReceiverContractDate)">
-											<ReceiverContractDate>
-												<xsl:value-of select="string(ReceiverContractDate)"/>
-											</ReceiverContractDate>
-										</xsl:if>	
 										<xsl:for-each select="ReceiverTransactionReference">
 											<ReceiverTransactionReference>
 												<xsl:value-of select="string(.)"/>
 											</ReceiverTransactionReference>
 										</xsl:for-each>
-										<xsl:if test="boolean(self::ReceiverTransactionDate)">
-											<ReceiverTransactionDate>
-												<xsl:value-of select="string(ReceiverTransactionDate)"/>
-											</ReceiverTransactionDate>
-										</xsl:if>
-										<xsl:if test="boolean(self::FileReference)">
-											<FileReference>
-												<xsl:value-of select="string(FileReference)"/>
-											</FileReference>
-										</xsl:if>
-										<xsl:if test="boolean(self::FileDate)">
-											<FileDate>
-												<xsl:value-of select="string(FileDate)"/>
-											</FileDate>
-										</xsl:if>
 										<xsl:for-each select="SequenceNumber">
 											<SequenceNumber>
 												<xsl:value-of select="string(.)"/>
@@ -1436,13 +1383,6 @@
 														<DeliveryNoteNumber>
 															<xsl:value-of select="string(DeliveryNoteNumber)"/>
 														</DeliveryNoteNumber>
-														<xsl:choose>
-															<xsl:when test='DeliveryNoteDate!=""'>
-																<DeliveryNoteDate>
-																	<xsl:value-of select="string(DeliveryNoteDate)"/>
-																</DeliveryNoteDate>
-															</xsl:when>
-														</xsl:choose>
 													</DeliveryNote>
 												</xsl:for-each>
 											</DeliveryNotesReferences>
@@ -1462,7 +1402,7 @@
 											<xsl:value-of select="string(UnitPriceWithoutTax)"/>
 										</UnitPriceWithoutTax>
 										<TotalCost>
-											<xsl:value-of select="format-number(number(string(TotalCost)), '#0.00', 'decimal')"/>
+											<xsl:value-of select="string(.)"/>
 										</TotalCost>
 										<xsl:for-each select="DiscountsAndRebates">
 											<DiscountsAndRebates>
@@ -1479,7 +1419,7 @@
 											</Charges>
 										</xsl:for-each>
 										<GrossAmount>
-											<xsl:value-of select="format-number(number(string(GrossAmount)), '#0.00', 'decimal')"/>
+											<xsl:value-of select="string(.)"/>
 										</GrossAmount>
 										<xsl:for-each select="TaxesWithheld">
 											<TaxesWithheld>
@@ -1510,21 +1450,6 @@
 												<xsl:value-of select="string(.)"/>
 											</AdditionalLineItemInformation>
 										</xsl:for-each>
-										<xsl:if test="boolean(self::SpecialTaxableEvent)">
-											<SpecialTaxableEvent>
-												<SpecialTaxableEventCode>
-													<xsl:value-of select="string(SpecialTaxableEventCode)" />
-												</SpecialTaxableEventCode>
-												<SpecialTaxableEventReason>
-													<xsl:value-of select="string(SpecialTaxableEventReason)" />
-												</SpecialTaxableEventReason>
-											</SpecialTaxableEvent>
-										</xsl:if>
-										<xsl:if test="boolean(self::ArticleCode)">
-											<ArticleCode>
-												<xsl:value-of select="string(.)"/>
-											</ArticleCode>
-										</xsl:if>
 										<xsl:for-each select="Extensions">
 											<xsl:copy-of select="."/>
 										</xsl:for-each>
