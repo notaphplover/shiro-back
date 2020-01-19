@@ -6,7 +6,7 @@ plugins {
 group 'org.jucm.test'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.11
 
 dependencies {
     implementation('com.sun.istack:istack-commons-runtime:2.24')
