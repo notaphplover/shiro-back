@@ -24,7 +24,7 @@ public class FacturaeTransformerToV3_2_1Test extends AbstractFacturaeTransformer
 
     @DisplayName("It must transform valid Facturae V3.2.0 files")
     @Test
-    public void itMustTransformValidFacturaeV3_2_0Files() throws IOException, FacturaeTransformException {
+    public void itMustTransformValidFacturaeV3_2_0Files() throws FacturaeTransformException {
         String[] files = {
                 "xml/schema/facturae/v3_2_0/facturae_3_2_0_1.xml",
                 "xml/schema/facturae/v3_2_0/facturae_3_2_0_2.xml",
